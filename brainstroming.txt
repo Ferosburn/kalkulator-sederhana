@@ -1,0 +1,164 @@
+input angka 40 * 1 + 5
+let operator = '';
+let arr = [];
+let result = 0;
+let d = '';
+
+// masuk string '4'
+  function angka(numInString) {
+    if(result) {                    // false
+      result = 0;
+    }
+    d += numInString;               // d = '4'
+  }
+  angka(4)
+// end masuk string '4'
+
+// masuk string '0'
+  function angka(numInString) {
+    if(result) {                    // false
+      result = 0;
+    }
+    d += numInString;               // d = '40'
+  }
+  angka(0)
+// end masuk string '0'
+
+// masuk string '*'
+  function kali() {
+    operator = '*';                 // operator = '*'
+    arr.push(parseInt(d, 10));      // arr = [40]
+    if(arr.length >= 3) {           // false
+      evaluate()
+      arr = [];
+      arr.push(result);
+    }
+    arr[1] = operator;              // arr = [40, '*']
+    d = '';                         // d = ''
+  }
+  kali()
+// end masuk string '*'
+
+// masuk string '1'
+  function angka(numInString) {
+    if(result) {                    // false
+      result = 0;
+    }
+    d += numInString;               // d = '1'
+  }
+  angka('1')
+// end masuk string '1'
+
+// masuk string '+'
+  function tambah() {
+    operator = '+';                 // operator = '+'
+    arr.push(parseInt(d, 10));      // arr = [40, '*', 1]
+    if(arr.length >= 3) {           // true
+      evaluate(arr)
+      arr = [];                     // arr = []
+      arr.push(result);             // arr = [40]
+    }
+    arr[1] = operator;              // arr = [40, '+']
+    d = '';                         // d = ''
+  }
+  tambah()
+// end masuk string '+'
+
+// masuk string '5'
+  function angka(numInString) {
+    if(result) {                    // true
+      result = 0;                   // result = 0
+    }
+    d += numInString;               // d = '5'
+  }
+  angka('5')
+// end masuk string '5'
+
+// masuk string '='
+  function operasi() {
+    arr.push(parseInt(d, 10));      // arr = [40, '+', 5]
+    evaluate(arr)                   // result = 45
+    arr = [];                       // arr = []
+    d = '';                         // d = ''
+  }
+  operasi()
+// end masuk string '='
+
+
+
+function evaluate(arr) {
+  const num1 = arr[0];
+  const num2 = arr[2];
+  switch(arr[1]) {
+    case '*':
+      result = num1 * num2;
+      break;
+    case '/':
+      result = num1 / num2;
+      break;
+    case '+':
+      result = num1 + num2;
+      break;
+    case '-':
+      result = num1 - num2;
+      break;
+    case '%':
+      result = num1 % num2;
+      break;
+    default:
+      console.log('masukkan operator')
+      break;
+  }
+}
+
+// 40 * *
+
+// d = '40'
+
+// masuk string '*'
+  function kali() {
+    operator = '*';                 // operator = '*'
+    if(arr.length >= 3) {           // false
+      evaluate()
+      arr = [];
+      arr.push(result);
+    }
+    if(!arr[0]) {                   // true
+      arr.push(parseInt(d, 10));    // arr = [40]
+    } else {
+      arr[2] = parseInt(d, 10);
+    }
+    arr[1] = operator;              // arr = [40, '*']
+  }
+  kali()
+// end masuk string '*'
+
+// masuk string '1'
+  function angka(numInString) {
+    if(result) {                    // false
+      result = 0;
+    }
+    d += numInString;               // d = '1'
+  }
+  angka('1')
+// end masuk string '1'
+
+
+// masuk string '*'
+  function kali() {
+    operator = '*';                 // operator = '*'
+    if(arr.length >= 3) {           // false
+      evaluate()
+      arr = [];
+      arr.push(result);
+      d = '';
+    }
+    if(!arr[0]) {                   // false
+      arr.push(parseInt(d, 10));
+    } else {
+      arr[2] = parseInt(d, 10);     // arr = [40, '*', 40]
+    }
+    arr[1] = operator;              // arr = [40, '*', 40]
+  }
+  kali()
+// end masuk string '*'
