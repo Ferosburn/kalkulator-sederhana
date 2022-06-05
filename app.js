@@ -43,7 +43,11 @@ end.addEventListener('click', function() {
   evaluate(arr)
   arr = [];
   d = '';
-  display.textContent = result.toFixed(3);
+  if(Number.isInteger(result)) {
+    display.textContent = result;
+  } else {
+    display.textContent = result.toFixed(2);
+  }
   console.log({d: d, arr: arr, rslt: result, opr: operator});
 })
 
