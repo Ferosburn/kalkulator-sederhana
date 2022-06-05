@@ -43,7 +43,7 @@ end.addEventListener('click', function() {
   evaluate(arr)
   arr = [];
   d = '';
-  display.textContent = result;
+  display.textContent = result.toFixed(3);
   console.log({d: d, arr: arr, rslt: result, opr: operator});
 })
 

@@ -1,16 +1,56 @@
-.btn-container table {
-  border: 1px solid;
-  border-collapse: collapse;
+* {
+  font-family: monospace;
+  margin: 0;
 }
 
-td {
-  border: 1px solid;
-  margin: 0;
-  padding: 20px;
+.container {
+  background: gray;
+  height: 80vh;
+  width: 70vh;
+  max-height: 100vw;
+  max-width: 90vw;
+  margin: 10vh auto 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.display-container {
+  height: 20%;
+  background-color: black;
+  position: relative;
+  background-color: lightgray;
 }
 
 #display {
-  height: 50px;
-  background-color: lightgray;
-  margin-bottom: 20px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 5em;
+  padding: 0 20px;
+}
+
+.btns-container {
+  height: 80%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.btn-container {
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+button {
+  font-size: 2.5em;
+  border-radius: 10px;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+#mod {
+  position: absolute;
+  bottom: 4%;
+  left: 35%;
+  font-size: 15px;
 }
