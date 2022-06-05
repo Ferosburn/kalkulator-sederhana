@@ -16,14 +16,16 @@ btns.forEach(function(btn) {
     }
     d += e.currentTarget.innerText;
     display.textContent = d;
-    console.log(d, arr, result);
+    console.log({d: d, arr: arr, rslt: result, opr: operator});
   })
 })
 
 oprs.forEach(function(opr) {
   opr.addEventListener('click', function(e) {
     operator = e.currentTarget.innerText;
-    arr.push(parseInt(d, 10));
+    if(d) {
+      arr.push(parseInt(d, 10));
+    }
     if(arr.length >= 3) {
       evaluate(arr)
       arr = [];
@@ -32,7 +34,7 @@ oprs.forEach(function(opr) {
     arr[1] = operator;
     d = '';
     display.textContent = operator;
-    console.log(d, arr, result);
+    console.log({d: d, arr: arr, rslt: result, opr: operator});
   })
 })
 
@@ -42,7 +44,7 @@ end.addEventListener('click', function() {
   arr = [];
   d = '';
   display.textContent = result;
-  console.log(d, arr, result);
+  console.log({d: d, arr: arr, rslt: result, opr: operator});
 })
 
 function evaluate(arr) {
