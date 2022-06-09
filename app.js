@@ -16,7 +16,6 @@ btns.forEach(function(btn) {
     }
     d += e.currentTarget.innerText;
     display.textContent = d;
-    console.log({d: d, arr: arr, rslt: result, opr: operator});
   })
 })
 
@@ -34,7 +33,6 @@ oprs.forEach(function(opr) {
     arr[1] = operator;
     d = '';
     display.textContent = operator;
-    console.log({d: d, arr: arr, rslt: result, opr: operator});
   })
 })
 
@@ -48,7 +46,6 @@ end.addEventListener('click', function() {
   } else {
     display.textContent = result.toFixed(2);
   }
-  console.log({d: d, arr: arr, rslt: result, opr: operator});
 })
 
 function evaluate(arr) {
@@ -74,4 +71,8 @@ function evaluate(arr) {
       console.log('masukkan operator')
       break;
   }
+}
+
+function debug() {
+  console.log({d: d, arr: arr, rslt: result, opr: operator});
 }

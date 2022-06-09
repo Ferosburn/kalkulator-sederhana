@@ -38,6 +38,7 @@
 .btn-container {
   padding: 5px;
   box-sizing: border-box;
+  position: relative;
 }
 
 button {
@@ -45,12 +46,11 @@ button {
   border-radius: 10px;
   height: 100%;
   width: 100%;
-  position: relative;
 }
 
 #mod {
   position: absolute;
-  bottom: 4%;
+  bottom: 7%;
   left: 35%;
   font-size: 15px;
 }
